@@ -1,6 +1,6 @@
 # DN Angular Template
 
-Created for the DN Bootcamp, this framework allows you to practice developing applications in Angular.
+Created for the DN Bootcamp, this template allows you to practice developing applications in Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 
@@ -53,6 +53,8 @@ How to install Git? - [Getting Started - Installing Git](https://git-scm.com/boo
 After cloning the repository, the projects dependencies will need to be installed. In the root directory of your project, run the following command to install the necessary packages.
 
 `npm install`
+
+The project dependencies may need to be updated at the time of install - [npm-update](https://docs.npmjs.com/cli/v10/commands/npm-update)
 
 More information on NPM - [Intro to NPM package Manager](https://nodejs.dev/en/learn/an-introduction-to-the-npm-package-manager/)
 
