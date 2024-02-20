@@ -1,0 +1,17 @@
+<table>
+    <thead>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+    </thead>
+    <tbody *ngFor="let job of jobs">
+        <!-- Rows inserted for each Job in Jobs array.-->
+        <tr>
+            <td>{{job.id}}</td>
+            <td>{{job.title}}</td>
+            <td>{{job.description}}</td>
+        </tr>
+    </tbody>
+</table>
+
+

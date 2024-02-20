@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.component.html'
 })
+
 export class AppComponent {
-  title = 'DN-Angular-Template';
+  title = 'DN Angular Template';
 }

@@ -1,0 +1,42 @@
+table{
+    padding:5px;
+    border-radius: 6px;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 12px;
+    max-width: 200px;
+}
+
+table thead {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: solid 19px var(--dn-grey);
+    top:0;
+    position: sticky;
+    text-align: left;
+    background-color: white;
+    cursor: pointer;
+}
+
+table th:hover {
+    background-color: #ddd;
+}
+
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+table tbody tr{
+    cursor: default;
+    color: var(--dn-grey);
+}
+
+table tbody tr:hover {
+    background-color: var(--dn-pink);
+    color:white;
+}
