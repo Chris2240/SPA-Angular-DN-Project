@@ -33,7 +33,7 @@ p{
     text-align: center;
 }
 
-.btn{
+/* .btn{
     margin:3px;
     padding: 10px;
     border: 2px solid white;
@@ -44,7 +44,7 @@ p{
 
 .btn:hover{
     color: var(--dn-grey);
-}
+} */
 
 .green-btn{
     background-color: var(--dn-green);
@@ -63,7 +63,7 @@ p{
     margin:30px;
 }
 
-.section-nav{
+/* .section-nav{
     margin: 20px;
     display: flex;
     justify-content: center;
@@ -81,7 +81,7 @@ p{
     height: 500px;
     border: 1px solid var(--dn-grey);
     border-radius: 6px;
-}
+} */
 
 .nav-link{
     width:200px;
