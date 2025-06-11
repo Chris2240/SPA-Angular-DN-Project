@@ -7,6 +7,7 @@
 
 *{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--dn-grey);
 }
 
 .dn-grey{
@@ -24,7 +25,7 @@ p{
 }
 
 .page-title{
-    margin: 10px;
+    margin: 50px;
     font-family: 'Segoe UI';
     letter-spacing: 5px;
     font-size: 30px;
@@ -83,7 +84,13 @@ p{
     border-radius: 6px;
 } */
 
-.nav-link{
+.section-container{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* .nav-link{
     width:200px;
     padding: 10px;
     border: 2px solid white;
@@ -92,6 +99,18 @@ p{
     justify-content: center;
     align-items: center;
     text-decoration: none;
+} */
+
+.nav-link{
+    width:fit-content;
+    font-size: 0.8rem;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    display: flex;
+    text-decoration: none;      
+    cursor: pointer;
+    margin: auto;
 }
 
 .page-content-container{
@@ -106,4 +125,51 @@ p{
     padding: 20px;
     border: 1px solid var(--dn-grey);
     border-radius: 5px;
+}
+
+.dn-border {
+    margin: auto;
+    border: 1px solid var(--dn-pink);
+    border-radius: 10px;
+    padding: 25px;
+    width: 90%;
+    height: 600px;
+    align-items: center;
+}
+
+.nav-section{
+    /* border: 1px solid; */
+
+    display: inline-block;      /* anything which is in this section it will go to the L/H */
+}
+
+.nav-link-file-load{
+    width:fit-content;
+    font-size: 0.8rem;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    display: flex;
+    /* align-items: center; */
+    text-decoration: none;      /* an example: deleting underline */
+    cursor: pointer;
+    margin-bottom: 100px;
+}
+
+table,
+th,
+td {
+    border: 1px solid var(--dn-grey);
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    /* width: 100px; */
+    width: auto;
+}
+
+tr {
+    text-align: center;
 }

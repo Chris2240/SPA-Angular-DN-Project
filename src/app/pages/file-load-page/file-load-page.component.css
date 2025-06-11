@@ -1,0 +1,33 @@
+#dn-file-load-center{
+    /* padding: 220px;
+    text-align: center;
+     */
+    
+     /* or */
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 510px;
+}
+
+#input-file-file-load,
+button{
+    width: auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+#submit-file-loader-Btn{
+    margin-top: 10px;
+    width: 85px;
+    padding: 10px;
+    background-color: var(--dn-grey);
+    border: 2px solid var(--dn-green);
+    border-radius: 6px;
+    color: var(--dn-green);
+    cursor: pointer;
+}
