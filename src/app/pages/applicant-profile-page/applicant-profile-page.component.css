@@ -1,0 +1,14 @@
+#top-applicant-profile{
+    display: flex;
+    justify-content: space-between;
+}
+
+#table-applicant-profile{
+    width: 50%;
+    margin: auto;       /* centerilize tables */
+    margin-top: 30px;
+}
+
+#applicant-profile-nav-link{
+    margin-top: 10px;
+}
