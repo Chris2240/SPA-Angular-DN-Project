@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './add-edit-job-employer-page.component.css'
 })
 export class AddEditJobEmployerPageComponent {
-  pageTitle: string = 'Add Edit Job Employer';
+  pageTitle: string = 'Add / Edit Job Employer';
 
 }
