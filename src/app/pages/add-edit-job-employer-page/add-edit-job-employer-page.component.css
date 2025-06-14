@@ -1,0 +1,44 @@
+.dn-border-add-edit-job-employer{
+    margin: auto;
+    border: 1px solid var(--dn-pink);
+    border-radius: 10px;
+    padding: 25px;
+    width: 90%;
+    height: 800px;
+    align-items: center;
+}
+
+#top-welcome-add-edit-job-employer{
+    display: flex;
+    justify-content: space-between;
+}
+
+#save-add-edit-btn{
+    margin-top: 10px;
+}
+
+button{
+    width: auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+#table-add-edit-job-employer{
+    width: 50%;
+    margin: auto;       /* centerilize tables */
+    margin-top: 30px;    
+}
+
+#add-edit-role-category-drop-down,
+#add-edit-location-combo-box{
+    width: auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2px;
+
+}
