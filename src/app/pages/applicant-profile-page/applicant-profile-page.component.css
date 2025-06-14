@@ -12,3 +12,13 @@
 #applicant-profile-nav-link{
     margin-top: 10px;
 }
+
+#applicant-profile-picture,
+#applicant-profile-cv{
+    width: auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2px;
+}
