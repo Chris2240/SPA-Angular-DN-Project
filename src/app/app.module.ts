@@ -13,15 +13,6 @@ import { EmployerProfilePageComponent } from './pages/employer-profile-page/empl
 import { AddEditJobEmployerPageComponent } from './pages/add-edit-job-employer-page/add-edit-job-employer-page.component';
 import { ApplicantJobDisplayViewPageComponent } from './pages/applicant-job-display-view-page/applicant-job-display-view-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-import { FileLoadComponent } from './components/file-load/file-load.component';
-import { MainViewComponent } from './components/main-view/main-view.component';
-import { ApplicantsAppliesComponent } from './components/applicants-applies/applicants-applies.component';
-import { ApplicantProfileComponent } from './components/applicant-profile/applicant-profile.component';
-import { EmployerProfileComponent } from './components/employer-profile/employer-profile.component';
-import { AddEditJobEmployerComponent } from './components/add-edit-job-employer/add-edit-job-employer.component';
-import { ApplicantJobDisplayViewComponent } from './components/applicant-job-display-view/applicant-job-display-view.component';
-import { MainViewEmployerComponent } from './components/main-view-employer/main-view-employer.component';
-
 
 @NgModule({
   declarations: [
@@ -35,14 +26,6 @@ import { MainViewEmployerComponent } from './components/main-view-employer/main-
     AddEditJobEmployerPageComponent,
     ApplicantJobDisplayViewPageComponent,
     NotFoundPageComponent,
-    FileLoadComponent,
-    MainViewComponent,
-    ApplicantsAppliesComponent,
-    ApplicantProfileComponent,
-    EmployerProfileComponent,
-    AddEditJobEmployerComponent,
-    ApplicantJobDisplayViewComponent,
-    MainViewEmployerComponent,
   ],
   imports: [
     BrowserModule,
