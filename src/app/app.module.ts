@@ -13,6 +13,7 @@ import { EmployerProfilePageComponent } from './pages/employer-profile-page/empl
 import { AddEditJobEmployerPageComponent } from './pages/add-edit-job-employer-page/add-edit-job-employer-page.component';
 import { ApplicantJobDisplayViewPageComponent } from './pages/applicant-job-display-view-page/applicant-job-display-view-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { CsvFileComponent } from './components/csv-file/csv-file.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     AddEditJobEmployerPageComponent,
     ApplicantJobDisplayViewPageComponent,
     NotFoundPageComponent,
+    CsvFileComponent,
   ],
   imports: [
     BrowserModule,
