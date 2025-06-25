@@ -1,7 +1,7 @@
             <div id="dn-file-load-center">
-                <form id="file-loader-form">                            
+                <form id="file-loader-form" (ngSubmit)="submitButton()">                            
                     <input type="file" name="file" class="green-btn " id="input-file-file-load" accept=".csv"><br><br>        <!-- save-input-data-blur -->
                     <label for="file-loader-label" id="file-loader-label">File Loader</label><br>
-                    <input id="submit-file-loader-Btn" type="submit">
+                    <input id="submit-file-loader-Btn" type="submit" value="Submit"> <!-- THAT IS AN OPTION WITH NEW BUTTON STYLE <button id="submit-file-loader-Btn" type="submit" (click)="submitButton">Submit</button> -->
                 </form>
             </div>
