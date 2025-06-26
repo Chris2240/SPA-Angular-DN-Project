@@ -14,6 +14,7 @@ import { AddEditJobEmployerPageComponent } from './pages/add-edit-job-employer-p
 import { ApplicantJobDisplayViewPageComponent } from './pages/applicant-job-display-view-page/applicant-job-display-view-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { CsvFileComponent } from './components/csv-file/csv-file.component';
+import { MainViewComponent } from './components/main-view/main-view.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CsvFileComponent } from './components/csv-file/csv-file.component';
     ApplicantJobDisplayViewPageComponent,
     NotFoundPageComponent,
     CsvFileComponent,
+    MainViewComponent,
   ],
   imports: [
     BrowserModule,
