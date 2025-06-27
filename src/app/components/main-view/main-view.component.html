@@ -18,38 +18,19 @@
                     <th>Details / Apply</th>
                 </tr>
             </thead>
-            <tbody id="tbody-main-view">
-            <!-- Data "tbody" inserted here via JavaScript 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+            <tbody id="tbody-main-view">            
+                <tr *ngFor="let item of csvData">
+                    <td>{{item ['Role Category'] }}</td>
+                    <td>{{item ['Role'] }}</td>
+                    <td>{{item ['Location'] }}</td>
+                    <td>{{item ['Industry'] }}</td>
+                    <td>{{item ['Function'] }}</td>
+                    <td>{{item ['Job Title'] }}</td>
+                    <td>{{item ['Experience'] }}</td>
+                    <td>{{item ['Salary'] }}</td>
                     <td>
-                        <nav class="nav-section">
-                            <a routerLink="/applicant-job-display-view" class=" nav-link green-btn">Details</a>
-                        </nav>
-                    </td>                        
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <nav class="nav-section">
-                            <a routerLink="/applicant-job-display-view" class=" nav-link green-btn">Details</a>
-                        </nav>
+                        <button class= "nav-link green-btn nav-section" (click)="detailsBtn(item.Role ?? '')">Details</button> <!-- the rauter link is implemented at detailBtn() method -->
                     </td>
                 </tr>
-            -->
             </tbody>                        
         </table>
