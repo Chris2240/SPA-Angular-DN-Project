@@ -15,6 +15,7 @@ import { ApplicantJobDisplayViewPageComponent } from './pages/applicant-job-disp
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { CsvFileComponent } from './components/csv-file/csv-file.component';
 import { MainViewComponent } from './components/main-view/main-view.component';
+import { ApplicantJobDisplayViewComponent } from './components/applicant-job-display-view/applicant-job-display-view.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MainViewComponent } from './components/main-view/main-view.component';
     NotFoundPageComponent,
     CsvFileComponent,
     MainViewComponent,
+    ApplicantJobDisplayViewComponent,
   ],
   imports: [
     BrowserModule,

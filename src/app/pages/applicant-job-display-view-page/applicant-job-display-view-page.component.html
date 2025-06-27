@@ -3,77 +3,7 @@
             <div class="dn-border-applicant-job-display-view">
                 <a routerLink="/" class="nav-link-file-load pink-btn">File Load Page</a>
                 <div id="section-applicant-job-display-view">
-                    <div id="applicant-job-display-top-buttons" class="nav-section">
-                        <a routerLink="/applicant-profile-page" id="applicant-profileBtn" class="nav-link green-btn">Applicant Profile (Display if an Applic. is NOT known)</a>
-                        <button id="applyMessageBtn" class="green-btn">Apply (Display if an Applic. profile is known)</button><br>
-                        <button id="back-main-viewBtn-url" class="green-btn" routerLink="/main-view-page">Back(MV)</button>
-                    </div>
-                    <form id="applicant-job-display-form">
-                        <table id="applicant-job-display-table">
-                            <tr style="text-align: left;">
-                                <td><label for="applicant-job-display-role-category-drop-down" class="role-category-blur">Role Category</label></td>
-                                <td>
-                                    <select id="applicant-job-display-role-category-drop-down" class="green-btn all-drop-down">
-                                        <option value="Select Role Category">Select Role Category</option>
-                                        <option value="Advertising">Advertising</option>
-                                        <option value="Programming & Design">Programming & Design</option>
-                                        <option value="Corporate Planning/Consulting/Strategy">Corporate Planning/Consulting/Strategy</option>
-                                        <option value="Online/Digital Marketing">Online/Digital Marketing</option>
-                                        <option value="Accounts">Accounts</option>
-                                        <option value="QA/Testing/Documentation">QA/Testing/Documentation</option>
-                                        <option value="Machine Operator">Machine Operator</option>
-                                        <option value="Project Management">Project Management</option>
-                                        <option value="Retail Sales">Retail Sales</option>
-                                        <option value="R&D">R&D</option>
-                                        <option value="Admin/Maintenance/Security/Datawarehousing">Admin/Maintenance/Security/Datawarehousing</option>
-                                    </select>
-                                    (Preview only)                                                             
-                                </td>
-                            </tr>                        
-                            <tr style="text-align: left;">
-                                <td><label for="applicant-job-display-role">Role</label></td>
-                                <td><input type="text" id="applicant-job-display-role" name="applicant-job-display-role" class="save-input-data-blur"></td>
-                            </tr>                        
-                            <tr style="text-align: left;">
-                                <td><label for="applicant-job-display-location-combo-box" class="location-blur">Location</label></td>
-                                <td>
-                                    <select id="applicant-job-display-location-combo-box" class="green-btn all-combo-box">
-                                        <option value="Select Location">Select Location</option>
-                                        <option value="Leeds">Leeds</option>
-                                        <option value="London">London</option>
-                                        <option value="Bradford">Bradford</option>
-                                        <option value="Huddersfield">Huddersfield</option>
-                                        <option value="Manchester">Manchester</option>
-                                        <option value="Liverpool">Liverpool</option>
-                                        <option value="Harrogate">Harrogate</option>
-                                        <option value="Hull">Hull</option>
-                                        <option value="Doncaster">Doncaster</option>
-                                        <option value="Birmingham">Birmingham</option>
-                                    </select>
-                                    (Preview only)                                       
-                                </td>
-                            </tr>                                                
-                            <tr style="text-align: left;">
-                                <td><label for="applicant-job-display-industry">Industry</label></td>
-                                <td><input type="text" id="applicant-job-display-industry" name="applicant-job-display-industry" class="save-input-data-blur"></td>
-                            </tr>
-                            <tr style="text-align: left;">
-                                <td><label for="applicant-job-display-function">Function</label></td>
-                                <td><input type="text" id="applicant-job-display-function" name="applicant-job-display-function" class="save-input-data-blur"></td>
-                            </tr>
-                            <tr style="text-align: left;">
-                                <td><label for="applicant-job-display-job-title">Job Title</label></td>
-                                <td><input type="text" id="applicant-job-display-job-title" name="applicant-job-display-job-title" class="save-input-data-blur"></td>
-                            </tr>
-                            <tr style="text-align: left;">
-                                <td><label for="applicant-job-display-experience">Experience</label></td>
-                                <td><input type="text" id="applicant-job-display-experience" name="applicant-job-display-experience" class="save-input-data-blur"></td>
-                            </tr>
-                            <tr style="text-align: left;">
-                                <td><label for="applicant-job-display-salary">Salary</label></td>
-                                <td><input type="text" id="applicant-job-display-salary" name="applicant-job-display-salary" class="save-input-data-blur"></td>
-                            </tr>
-                        </table>
-                    </form>                                              
+                    <app-applicant-job-display-view>                        
+                    </app-applicant-job-display-view>                                                                 
                 </div>
             </div>
