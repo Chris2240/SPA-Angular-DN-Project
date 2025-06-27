@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class MainViewComponent implements OnInit {
 
   csvData: IcsvDataItem[] = []; // array of objects typed with IcsvDataItem interface, used in "*ngFor" directive in the html template
-  constructor(private dbService: DbService, private router: Router) {} // services are injected through the constructor
+  constructor(private dbService: DbService, private router: Router) {} // services are injected ALWAYS through the constructor
   
 
   // ngOnInit
