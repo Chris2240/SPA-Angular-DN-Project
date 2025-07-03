@@ -1,6 +1,6 @@
                     <div id="applicant-job-display-top-buttons" class="nav-section">
-                        <a routerLink="/applicant-profile-page" id="applicant-profileBtn" class="nav-link green-btn">Applicant Profile (Display if an Applic. is NOT known)</a>
-                        <button id="applyMessageBtn" class="green-btn">Apply (Display if an Applic. profile is known)</button><br>
+                        <a routerLink="/applicant-profile-page" #applicantPprofileBtn class="nav-link green-btn">Applicant Profile (Display if an Applic. is NOT known)</a>
+                        <button #messageBtn class="green-btn" (click)="applyMessageBtn();">Apply (Display if an Applic. profile is known)</button><br> <!-- #messageBtn - taking referances at Angular -->
                         <button id="back-main-viewBtn-url" class="green-btn" routerLink="/main-view-page">Back(MV)</button>
                     </div>
                     <form id="applicant-job-display-form">
@@ -8,8 +8,8 @@
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-role-category-drop-down" class="role-category-blur">Role Category</label></td>
                                 <td>
-                                    <select id="applicant-job-display-role-category-drop-down" class="green-btn all-drop-down">
-                                        <option value="Select Role Category">Select Role Category</option>
+                                    <select id="applicant-job-display-role-category-drop-down" class="green-btn all-drop-down" [(ngModel)]="csvData['Role Category']" [ngModelOptions]="{standalone: true}">
+                                        <option value="">Select Role Category</option> <!-- at Angular in this case the "value="" need to be empty -->
                                         <option value="Advertising">Advertising</option>
                                         <option value="Programming & Design">Programming & Design</option>
                                         <option value="Corporate Planning/Consulting/Strategy">Corporate Planning/Consulting/Strategy</option>
@@ -27,13 +27,13 @@
                             </tr>                        
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-role">Role</label></td>
-                                <td><input type="text" id="applicant-job-display-role" name="applicant-job-display-role" class="save-input-data-blur"></td>
+                                <td><input type="text" id="applicant-job-display-role" name="applicant-job-display-role" class="save-input-data-blur" [(ngModel)]="csvData['Role']"></td>
                             </tr>                        
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-location-combo-box" class="location-blur">Location</label></td>
                                 <td>
-                                    <select id="applicant-job-display-location-combo-box" class="green-btn all-combo-box">
-                                        <option value="Select Location">Select Location</option>
+                                    <select id="applicant-job-display-location-combo-box" class="green-btn all-combo-box" [(ngModel)]="csvData['Location']" [ngModelOptions]="{standalone: true}"> <!-- no name attribute - [ngModelOptions]="{standalone: true}" -->
+                                        <option value="">Select Location</option> <!-- at Angular in this case the "value="" need to be empty -->
                                         <option value="Leeds">Leeds</option>
                                         <option value="London">London</option>
                                         <option value="Bradford">Bradford</option>
@@ -50,23 +50,23 @@
                             </tr>                                                
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-industry">Industry</label></td>
-                                <td><input type="text" id="applicant-job-display-industry" name="applicant-job-display-industry" class="save-input-data-blur"></td>
+                                <td><input type="text" id="applicant-job-display-industry" name="applicant-job-display-industry" class="save-input-data-blur" [(ngModel)]="csvData['Industry']"></td>
                             </tr>
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-function">Function</label></td>
-                                <td><input type="text" id="applicant-job-display-function" name="applicant-job-display-function" class="save-input-data-blur"></td>
+                                <td><input type="text" id="applicant-job-display-function" name="applicant-job-display-function" class="save-input-data-blur" [(ngModel)]="csvData['Function']"></td>
                             </tr>
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-job-title">Job Title</label></td>
-                                <td><input type="text" id="applicant-job-display-job-title" name="applicant-job-display-job-title" class="save-input-data-blur"></td>
+                                <td><input type="text" id="applicant-job-display-job-title" name="applicant-job-display-job-title" class="save-input-data-blur" [(ngModel)]="csvData['Job Title']"></td>
                             </tr>
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-experience">Experience</label></td>
-                                <td><input type="text" id="applicant-job-display-experience" name="applicant-job-display-experience" class="save-input-data-blur"></td>
+                                <td><input type="text" id="applicant-job-display-experience" name="applicant-job-display-experience" class="save-input-data-blur" [(ngModel)]="csvData['Experience']"></td>
                             </tr>
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-salary">Salary</label></td>
-                                <td><input type="text" id="applicant-job-display-salary" name="applicant-job-display-salary" class="save-input-data-blur"></td>
+                                <td><input type="text" id="applicant-job-display-salary" name="applicant-job-display-salary" class="save-input-data-blur" [(ngModel)]="csvData['Salary']"></td>
                             </tr>
                         </table>
                     </form> 
