@@ -16,6 +16,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { CsvFileComponent } from './components/csv-file/csv-file.component';
 import { MainViewComponent } from './components/main-view/main-view.component';
 import { ApplicantJobDisplayViewComponent } from './components/applicant-job-display-view/applicant-job-display-view.component';
+import { ApplicantProfileComponent } from './components/applicant-profile/applicant-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ApplicantJobDisplayViewComponent } from './components/applicant-job-dis
     CsvFileComponent,
     MainViewComponent,
     ApplicantJobDisplayViewComponent,
+    ApplicantProfileComponent,
   ],
   imports: [
     BrowserModule,

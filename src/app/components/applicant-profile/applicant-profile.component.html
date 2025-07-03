@@ -1,0 +1,62 @@
+<div class="section-applicant-profile">
+        <div id="top-applicant-profile">
+            <form>
+                <label for="applicant-profile-welcome-name">Welcome: </label>
+                    <span id="applicant-profile-welcome-name" name="applicant-profile-welcome-name">Applicant Name (Entered)</span><br>                            
+            </form>
+                <div>
+                    <img src="" id="applicant-profile-photo-src" alt="Applicant Photo" style="width: 100px; height: 70px">
+                </div>
+                        
+                <!-- added Applicant CV link to download file if user attach the CV -->
+                <div>
+                    <a id="applicant-profile-CV-link" class="nav-link green-btn">No CV Available (Additional Button)</a>
+                </div>
+        </div>
+        <nav class="nav-section">
+            <a routerLink="/main-view-page" id="applicant-profile-nav-link" class="nav-link green-btn">Back(MV)</a>
+        </nav>
+        <form id="applicant-profile-form-table">
+            <table id="table-applicant-profile">
+                <tr style="text-align: left;">
+                    <th><label for="applicant-profile-name">Applicant Name</label></th>
+                    <th><input type="text" id="applicant-profile-name" name="applicant-profile-name" class="save-input-data-blur"></th>
+                </tr>
+                <tr style="text-align: left;">
+                    <td><label for="applicant-phone">Phone Number</label></td>
+                    <td><input 
+                            type="text" 
+                            id="applicant-phone" 
+                            name="applicant-phone" 
+                            title="Please provide a valied phone number"
+                            placeholder="mobile phone"
+                            class="save-input-data-blur">
+                    </td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td> <label for="applicant-email">Email</label></td>
+                    <td><input
+                            type="email" 
+                            id="applicant-email" 
+                            name="applicant-email"
+                            maxlength="32"
+                            required                                            
+                            placeholder="userName@example.com"                                        
+                            title="Please provide a vailed email address"
+                            class="save-input-data-blur">
+                    </td>
+                    <!-- "required" attribute - providing default value "Please fill in this field" when mice arrow hover the input bar -->
+                    <!-- "title" attribute - deleting default value and providing other text instead (if title attribute contain one) -->
+
+                </tr>
+                <tr style="text-align: left;">
+                    <td><label for="applicant-profile-picture">Profile Picture</label></td>
+                    <td><input type="file" id="applicant-profile-picture" name="applicant-profile-picture" class="green-btn save-input-data-blur" accept="image/*, .pdf"></td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td> <label for="applicant-profile-cv">CV</label></td>
+                    <td><input type="file" id="applicant-profile-cv" name="applicant-profile-cv" class=" green-btn save-input-data-blur" accept=".rtf, .pdf, .doc, .docx"></td>
+                </tr>
+            </table>
+        </form>
+    </div>

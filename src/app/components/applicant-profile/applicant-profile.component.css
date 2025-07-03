@@ -1,0 +1,24 @@
+#top-applicant-profile{
+    display: flex;
+    justify-content: space-between;
+}
+
+#table-applicant-profile{
+    width: 50%;
+    margin: auto;       /* centerilize tables */
+    margin-top: 30px;
+}
+
+#applicant-profile-nav-link{
+    margin-top: 10px;
+}
+
+#applicant-profile-picture,
+#applicant-profile-cv{
+    width: auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2px;
+}
