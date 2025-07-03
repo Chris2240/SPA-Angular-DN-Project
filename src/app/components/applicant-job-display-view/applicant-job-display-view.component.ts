@@ -23,7 +23,7 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
   
   constructor(private dbService: DbService, private route: ActivatedRoute){};
 
-  @ViewChild('applicantPprofileBtn') applicantPprofileBtnRef!: ElementRef<HTMLElement>;
+  @ViewChild('applicantPprofileBtn') applicantPprofileBtnRef!: ElementRef<HTMLElement>;   // @ViewChild + templateRef(#applicantPprofileBtn) - using when we need to manipulate the element directtly, like pressing button
   @ViewChild('messageBtn') messageBtnRef!: ElementRef<HTMLElement>;
   
 
