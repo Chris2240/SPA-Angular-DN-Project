@@ -2,7 +2,7 @@
         <div id="top-applicant-profile">
             <form>
                 <label for="applicant-profile-welcome-name">Welcome: </label>
-                    <span id="applicant-profile-welcome-name" name="applicant-profile-welcome-name">Applicant Name (Entered)</span><br>                            
+                    <span id="applicant-profile-welcome-name" name="applicant-profile-welcome-name">{{spanWelcomeName ||'Applicant Name (Entered)'}}</span><br>                            
             </form>
                 <div>
                     <img src="" id="applicant-profile-photo-src" alt="Applicant Photo" style="width: 100px; height: 70px">
@@ -20,30 +20,39 @@
             <table id="table-applicant-profile">
                 <tr style="text-align: left;">
                     <th><label for="applicant-profile-name">Applicant Name</label></th>
-                    <th><input type="text" id="applicant-profile-name" name="applicant-profile-name" class="save-input-data-blur"></th>
+                    <th><input 
+                            type="text" 
+                            id="applicant-profile-name" 
+                            name="applicant-profile-name"
+                            [(ngModel)]="applicantProfileInputName"
+                            (blur)="applicantProfileStoreWelcomeName()">
+                    </th>
                 </tr>
                 <tr style="text-align: left;">
                     <td><label for="applicant-phone">Phone Number</label></td>
                     <td><input 
                             type="text" 
                             id="applicant-phone" 
-                            name="applicant-phone" 
+                            name="applicant-phone"
+                            [(ngModel)]="applicantPhone"
+                            appSaveInputOnBlur
                             title="Please provide a valied phone number"
-                            placeholder="mobile phone"
-                            class="save-input-data-blur">
+                            placeholder="mobile phone">
                     </td>
+                    <!-- [(ngModel)]="applicantPhone" - two-way binding (very handy for keeping input and component property in sync) -->
                 </tr>
                 <tr style="text-align: left;">
                     <td> <label for="applicant-email">Email</label></td>
                     <td><input
-                            type="email" 
+                            type="email"
                             id="applicant-email" 
                             name="applicant-email"
+                            [(ngModel)]="applicantEmail"
+                            appSaveInputOnBlur
                             maxlength="32"
                             required                                            
                             placeholder="userName@example.com"                                        
-                            title="Please provide a vailed email address"
-                            class="save-input-data-blur">
+                            title="Please provide a vailed email address">
                     </td>
                     <!-- "required" attribute - providing default value "Please fill in this field" when mice arrow hover the input bar -->
                     <!-- "title" attribute - deleting default value and providing other text instead (if title attribute contain one) -->
