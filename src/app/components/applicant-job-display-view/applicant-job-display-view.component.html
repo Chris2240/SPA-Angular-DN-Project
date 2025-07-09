@@ -8,7 +8,7 @@
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-role-category-drop-down" class="role-category-blur">Role Category</label></td>
                                 <td>
-                                    <select id="applicant-job-display-role-category-drop-down" class="green-btn all-drop-down" [(ngModel)]="csvData['Role Category']" [ngModelOptions]="{standalone: true}">
+                                    <select id="applicant-job-display-role-category-drop-down" class="green-btn all-drop-down" [(ngModel)]="csvData['Role Category']" [ngModelOptions]="{standalone: true}" appSaveSelectOptionOnBlur>
                                         <option value="">Select Role Category</option> <!-- at Angular in this case the "value="" need to be empty -->
                                         <option value="Advertising">Advertising</option>
                                         <option value="Programming & Design">Programming & Design</option>
@@ -32,7 +32,7 @@
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-location-combo-box" class="location-blur">Location</label></td>
                                 <td>
-                                    <select id="applicant-job-display-location-combo-box" class="green-btn all-combo-box" [(ngModel)]="csvData['Location']" [ngModelOptions]="{standalone: true}"> <!-- no name attribute - [ngModelOptions]="{standalone: true}" -->
+                                    <select id="applicant-job-display-location-combo-box" class="green-btn all-combo-box" [(ngModel)]="csvData['Location']" [ngModelOptions]="{standalone: true}" appSaveSelectOptionOnBlur> <!-- no name attribute - [ngModelOptions]="{standalone: true}" -->
                                         <option value="">Select Location</option> <!-- at Angular in this case the "value="" need to be empty -->
                                         <option value="Leeds">Leeds</option>
                                         <option value="London">London</option>
