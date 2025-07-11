@@ -19,6 +19,7 @@ import { ApplicantJobDisplayViewComponent } from './components/applicant-job-dis
 import { ApplicantProfileComponent } from './components/applicant-profile/applicant-profile.component';
 import { SaveInputOnBlurDirective } from './directives/save-input-on-blur.directive';
 import { SaveSelectOptionOnBlurDirective } from './directives/save-select-option-on-blur.directive';
+import { SaveAndDisplayPictureDirective } from './directives/save-and-display-picture.directive';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SaveSelectOptionOnBlurDirective } from './directives/save-select-option
     ApplicantProfileComponent,
     SaveInputOnBlurDirective,
     SaveSelectOptionOnBlurDirective,
+    SaveAndDisplayPictureDirective
   ],
   imports: [
     BrowserModule,

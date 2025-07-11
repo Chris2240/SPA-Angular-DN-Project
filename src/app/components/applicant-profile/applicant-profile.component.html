@@ -5,7 +5,7 @@
                     <span id="applicant-profile-welcome-name" name="applicant-profile-welcome-name">{{spanWelcomeName ||'Applicant Name (Entered)'}}</span><br>                            
             </form>
                 <div>
-                    <img src="" id="applicant-profile-photo-src" alt="Applicant Photo" style="width: 100px; height: 70px">
+                    <img src="" id="applicant-profile-photo-src" alt="Applicant Photo" style="width: 100px; height: 70px" #imageReload>
                 </div>
                         
                 <!-- added Applicant CV link to download file if user attach the CV -->
@@ -60,11 +60,11 @@
                 </tr>
                 <tr style="text-align: left;">
                     <td><label for="applicant-profile-picture">Profile Picture</label></td>
-                    <td><input type="file" id="applicant-profile-picture" name="applicant-profile-picture" class="green-btn save-input-data-blur" accept="image/*, .pdf"></td>
+                    <td><input type="file" id="applicant-profile-picture" name="applicant-profile-picture" class="green-btn" accept="image/*, .pdf" [appSaveAndDisplayPicture]="'applicant-profile-photo-src'"></td>
                 </tr>
                 <tr style="text-align: left;">
                     <td> <label for="applicant-profile-cv">CV</label></td>
-                    <td><input type="file" id="applicant-profile-cv" name="applicant-profile-cv" class=" green-btn save-input-data-blur" accept=".rtf, .pdf, .doc, .docx"></td>
+                    <td><input type="file" id="applicant-profile-cv" name="applicant-profile-cv" class=" green-btn" accept=".rtf, .pdf, .doc, .docx"></td>
                 </tr>
             </table>
         </form>

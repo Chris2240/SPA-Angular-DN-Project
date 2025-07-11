@@ -1,24 +1,33 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'app-applicant-profile',
   templateUrl: './applicant-profile.component.html',
   styleUrl: './applicant-profile.component.css'
 })
-export class ApplicantProfileComponent implements OnInit{
+export class ApplicantProfileComponent implements OnInit, AfterViewInit{
 
   applicantProfileInputName: string = '';
   spanWelcomeName: string = '';  // for display in the welcome span
   applicantPhone: string = '';  // [(ngModel)]="applicantPhone" - two-way binding (very handy for keeping input and component property in sync)
   applicantEmail: string = '';
 
+  // use @ViewChild() to get a reference to that <img> element 
+  @ViewChild('imageReload') imageReloadRef!: ElementRef<HTMLImageElement>;
+
   
-  ngOnInit(): void {  // - updating after reloading or come backing to this current page
+  ngOnInit(): void {  // - updating after reloading or come backing to this current page - this is for all properties, variables, services
     
     const savedName = localStorage.getItem('applicant-profile-name') || "Applicant Name (Entered)";
     if(savedName){      
       this.spanWelcomeName = savedName;
     }
+  }
+
+
+  // updating after reloading all references from "@ViewChild", etc
+  ngAfterViewInit(): void {
+    this.reloadImageFromLocalSorage();
   }
 
 
@@ -70,6 +79,15 @@ export class ApplicantProfileComponent implements OnInit{
     else {
         alert("Please enter a valid email address");
         return false;   // Prevent saving data if email is invalid
+    }
+  }
+
+  // reload the image from localStorage for ngAfterViewInit(), to keep image appear after reloading
+  reloadImageFromLocalSorage():void{
+    const ImageDataUrl = localStorage.getItem('applicant-profile-photo-src');
+
+    if(ImageDataUrl){
+      this.imageReloadRef.nativeElement.src = ImageDataUrl;
     }
   }
 }
