@@ -39,7 +39,7 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
 
   
   ngAfterViewInit(): void {
-    this.noPopulateDataAtApplicantJobDisplayView();
+    this.hideMessageBtn();
   }
 
   
@@ -117,7 +117,7 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
   }
 
   
-  noPopulateDataAtApplicantJobDisplayView(): void{
+  hideMessageBtn(): void{
     const applicantPprofileBtn = this.applicantPprofileBtnRef.nativeElement;
     const messageBtn = this.messageBtnRef.nativeElement;
 
