@@ -10,7 +10,7 @@ export class SaveAndDisplayPictureDirective {
   constructor(private el: ElementRef<HTMLInputElement>) { }
 
   @HostListener('change', ['$event'])
-  onFileChange(event: Event): void{
+  onFileChange(): void{
     const inputEl = this.el.nativeElement;
     const files = inputEl.files;
 
