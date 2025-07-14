@@ -26,7 +26,8 @@
                             id="applicant-profile-name" 
                             name="applicant-profile-name"
                             [(ngModel)]="applicantProfileInputName"
-                            (blur)="applicantProfileStoreWelcomeName()">
+                            (blur)="applicantProfileStoreWelcomeName()"
+                            (change)="changeNameApplicantProfileAndClearLocalStorageKeys()">
                     </th>
                 </tr>
                 <tr style="text-align: left;">

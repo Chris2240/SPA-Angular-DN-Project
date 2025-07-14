@@ -171,4 +171,33 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
     }
   }
 
+  async changeNameApplicantProfileAndClearLocalStorageKeys(): Promise<void>{
+
+    const newName = this.applicantProfileInputName.trim();
+    const existingWelcomeSpanName = this.spanWelcomeName?.trim() ?? "";
+    const lsAlreadyExistingName = localStorage.getItem('applicant-profile-name');
+
+    if(newName !== '' && newName !== existingWelcomeSpanName && newName !== lsAlreadyExistingName){
+
+      await this.clearApplicantProfileLocalStorageDataKeys();
+
+      localStorage.setItem('applicant-profile-name', newName);
+    }
+
+  }
+
+  async clearApplicantProfileLocalStorageDataKeys(): Promise<void>{
+
+    // providing localStorage applicant profile fields to remove
+    const lsFieldsToClear: string [] = [ 'applicant-phone', 'applicant-email', 'applicant-profile-photo-src', 'applicant-profile-cv'];
+
+    lsFieldsToClear.forEach(key =>{      
+      localStorage.removeItem(key); // removing keys from array
+    })
+
+    console.log('Applicant Profile localStorage fileds are cleared for new applicant');
+
+    location.reload();
+  }
+
 }
