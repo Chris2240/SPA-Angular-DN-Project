@@ -9,9 +9,10 @@
                 </div>
                         
                 <!-- added Applicant CV link to download file if user attach the CV -->
-                <div>
-                    <a id="applicant-profile-CV-link" class="nav-link green-btn">No CV Available (Additional Button)</a>
-                </div>
+                <nav>
+                    <!-- anchor element reference (#cvAnchorLink); displays 'cvAnchorText' or fallback text to default text if it's empty - Angular -->
+                    <a id="applicant-profile-CV-link" class="nav-link green-btn" #cvAnchorLink>{{cvAnchorText || 'No CV Available (Additional Button)'}}</a>
+                </nav>
         </div>
         <nav class="nav-section">
             <a routerLink="/main-view-page" id="applicant-profile-nav-link" class="nav-link green-btn">Back(MV)</a>
@@ -64,7 +65,7 @@
                 </tr>
                 <tr style="text-align: left;">
                     <td> <label for="applicant-profile-cv">CV</label></td>
-                    <td><input type="file" id="applicant-profile-cv" name="applicant-profile-cv" class=" green-btn" accept=".rtf, .pdf, .doc, .docx"></td>
+                    <td><input type="file" id="applicant-profile-cv" name="applicant-profile-cv" class=" green-btn" accept=".rtf, .pdf, .doc, .docx" #cvInput (change)="saveCvAtLocalStorageAndRestore()"></td>
                 </tr>
             </table>
         </form>
