@@ -116,18 +116,6 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
 
   }
 
-  
-  hideMessageBtn(): void{ // delete this method!!!!
-    const applicantProfileLinkBtn = this.applicantPprofileBtnRef.nativeElement;
-    const messageBtn = this.messageBtnRef.nativeElement;
-
-    if(applicantProfileLinkBtn && messageBtn){
-      applicantProfileLinkBtn.style.display = "block";
-      messageBtn.style.display = "none";
-    }
-  }
-
-
   // checking if "Applicant Profile" page contain name, phone and email (at localStorage). Whatever exist or not, show or hide the following buttons in "Applicant Job Display View"
   applicantProfileInputsCheckAndDisplayBtnsAtAJDV():void{   // ...AJDV - Applicant Job Display View
     
