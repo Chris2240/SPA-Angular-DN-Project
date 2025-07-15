@@ -39,7 +39,7 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
 
   
   ngAfterViewInit(): void {
-    this.hideMessageBtn();
+    this.applicantProfileInputsCheckAndDisplayBtnsAtAJDV();
   }
 
   
@@ -117,13 +117,37 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
   }
 
   
-  hideMessageBtn(): void{
-    const applicantPprofileBtn = this.applicantPprofileBtnRef.nativeElement;
+  hideMessageBtn(): void{ // delete this method!!!!
+    const applicantProfileLinkBtn = this.applicantPprofileBtnRef.nativeElement;
     const messageBtn = this.messageBtnRef.nativeElement;
 
-    if(applicantPprofileBtn && messageBtn){
-      applicantPprofileBtn.style.display = "block";
+    if(applicantProfileLinkBtn && messageBtn){
+      applicantProfileLinkBtn.style.display = "block";
       messageBtn.style.display = "none";
     }
+  }
+
+
+  // checking if "Applicant Profile" page contain name, phone and email (at localStorage). Whatever exist or not, show or hide the following buttons in "Applicant Job Display View"
+  applicantProfileInputsCheckAndDisplayBtnsAtAJDV():void{   // ...AJDV - Applicant Job Display View
+    
+    // taking references of DOM elements using "@ViewChlid" property decorator
+    const applicantProfileLinkBtn = this.applicantPprofileBtnRef.nativeElement;
+    const messageBtn = this.messageBtnRef.nativeElement;
+
+    const lsApplicantProfileName = localStorage.getItem('applicant-profile-name');
+    const lsApplicantProfilePhone = localStorage.getItem('applicant-phone');
+    const lsApplicantProfileEmail = localStorage.getItem('applicant-email');
+
+    if(lsApplicantProfileName && lsApplicantProfilePhone && lsApplicantProfileEmail){
+
+      applicantProfileLinkBtn.style.display = 'none';
+      messageBtn.style.display = 'block';
+    }
+    else{
+      applicantProfileLinkBtn.style.display = 'block';
+      messageBtn.style.display = 'none';
+    }
+
   }
 }
