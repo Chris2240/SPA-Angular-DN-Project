@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DbService } from '../../services/db.service';
 import { IcsvDataItem } from '../../models/icsv-data-item.model';
 import { Router } from '@angular/router';
@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
   templateUrl: './main-view.component.html',
   styleUrl: './main-view.component.css'
 })
-export class MainViewComponent implements OnInit {
+export class MainViewComponent implements OnInit, AfterViewInit {
+
+  // getting the references of DOM elements using @ViewChild() property decorator
+  @ViewChild('applicantProfileLink') applicantProfileLinkRef!: ElementRef<HTMLAnchorElement>;
 
   csvData: IcsvDataItem[] = []; // array of objects typed with IcsvDataItem interface, used in "*ngFor" directive in the html template
   constructor(private dbService: DbService, private router: Router) {} // services are injected ALWAYS through the constructor
@@ -17,6 +20,11 @@ export class MainViewComponent implements OnInit {
   // ngOnInit
   ngOnInit(): void {
     this.loadCSVDatafromIDBandDisplayInTable();
+  }
+
+  // ngAfterViewInit 
+  ngAfterViewInit(): void {
+    this.hideApplicantProfileBtnsAtMainView();  // - because I have used the reference from @ViewChild property decorator which is inside this method and methodwill only works in this "ngAfterViewInit()"
   }
 
   //functions
@@ -58,6 +66,23 @@ export class MainViewComponent implements OnInit {
     this.router.navigate(['/applicant-job-display-view-page'], {
       queryParams: {role}
     });
+  }
+
+
+  // hide "Applicant Profile" anchor button in Main View page if "Applicant Profile" page contains name, phone, and email
+  hideApplicantProfileBtnsAtMainView():void{
+
+    // accessing the native HTML anchor element from the @ViewChild reference
+    const applicantProfileBtn = this.applicantProfileLinkRef.nativeElement;
+
+    const applicantProfileName = localStorage.getItem('applicant-profile-name');
+    const applicantProfilePhone = localStorage.getItem('applicant-phone');
+    const applicantProfileEmail = localStorage.getItem('applicant-email');
+
+    if(applicantProfileName && applicantProfilePhone && applicantProfileEmail){
+
+      applicantProfileBtn.style.display = 'none'
+    }
   }
 
 }
