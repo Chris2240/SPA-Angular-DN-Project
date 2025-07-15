@@ -74,7 +74,7 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
 
 
   // validation for applicant email
-  applicantValidateEmailInput(){
+  applicantValidateEmailInput(): boolean{
     
     const emailValue = this.applicantEmail.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
