@@ -182,6 +182,8 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
       await this.clearApplicantProfileLocalStorageDataKeys();
 
       localStorage.setItem('applicant-profile-name', newName);
+
+      location.reload();
     }
 
   }
@@ -196,8 +198,6 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
     })
 
     console.log('Applicant Profile localStorage fileds are cleared for new applicant');
-
-    location.reload();
   }
 
 }
