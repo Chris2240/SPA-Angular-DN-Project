@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DbService } from '../../services/db.service';
+import { DbService } from '../../services/csvDb.service';
 import { IcsvDataItem } from '../../models/icsv-data-item.model';
 import { Router } from '@angular/router';
 

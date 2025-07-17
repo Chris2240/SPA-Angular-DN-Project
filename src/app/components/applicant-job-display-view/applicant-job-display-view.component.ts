@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DbService } from '../../services/db.service';
+import { DbService } from '../../services/csvDb.service';
 import { IcsvDataForApplicantJobDisplayView } from '../../models/icsv-data-for-applicant-job-display-view.model';
 import { ActivatedRoute } from '@angular/router';
 

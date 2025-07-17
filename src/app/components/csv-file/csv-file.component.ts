@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import Papa from 'papaparse';
-import { DbService } from '../../services/db.service';
+import { DbService } from '../../services/csvDb.service';
 
 
 @Component({
