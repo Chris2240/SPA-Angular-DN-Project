@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DbService } from '../../services/csvDb.service';
+import { CsvDbService } from '../../services/csvDb.service';
 import { IcsvDataItem } from '../../models/icsv-data-item.model';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,7 @@ export class MainViewComponent implements OnInit, AfterViewInit {
   @ViewChild('applicantProfileLink') applicantProfileLinkRef!: ElementRef<HTMLAnchorElement>;
 
   csvData: IcsvDataItem[] = []; // array of objects typed with IcsvDataItem interface, used in "*ngFor" directive in the html template
-  constructor(private dbService: DbService, private router: Router) {} // services are injected ALWAYS through the constructor
+  constructor(private CsvDbService: CsvDbService, private router: Router) {} // services are injected ALWAYS through the constructor
   
 
   // ngOnInit
@@ -31,7 +31,7 @@ export class MainViewComponent implements OnInit, AfterViewInit {
   loadCSVDatafromIDBandDisplayInTable(): Promise<void> { // Declaring Promise<void> indicates that the function is asynchronous and resolves once the task (loading and displaying data) is complete
                                                           // Function is not to return data but to load it from IndexedDB and populate the table directly(updating the DOM - side effect)
 
-    return this.dbService.initCSVIndexedDB().then((db: IDBDatabase) => {
+    return this.CsvDbService.initCSVIndexedDB().then((db: IDBDatabase) => {
 
         const loadCSVTransaction = db.transaction(['csvData_os'], "readonly");
         const loadCSVStoreObject = loadCSVTransaction.objectStore('csvData_os');

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import Papa from 'papaparse';
-import { DbService } from '../../services/csvDb.service';
+import { CsvDbService } from '../../services/csvDb.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { DbService } from '../../services/csvDb.service';
 })
 export class CsvFileComponent {
 
-  constructor(private service: DbService) {}  // Angular will manage the lifecycle and dependency injection for me.
+  constructor(private service: CsvDbService) {}  // Angular will manage the lifecycle and dependency injection for me.
 
   // converting csv file into jason file using papaprse library
   private readCSVFileAndConvertToJSON(csvFile: File): Promise<any[]> {   // "File" is the standard type for file inputs in browser

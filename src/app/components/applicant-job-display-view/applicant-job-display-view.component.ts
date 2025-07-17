@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DbService } from '../../services/csvDb.service';
+import { CsvDbService } from '../../services/csvDb.service';
 import { IcsvDataForApplicantJobDisplayView } from '../../models/icsv-data-for-applicant-job-display-view.model';
 import { ActivatedRoute } from '@angular/router';
 
@@ -21,7 +21,7 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
   'Salary': '',
   };
   
-  constructor(private dbService: DbService, private route: ActivatedRoute){};
+  constructor(private CsvDbService: CsvDbService, private route: ActivatedRoute){};
 
   @ViewChild('applicantPprofileBtn') applicantPprofileBtnRef!: ElementRef<HTMLElement>;   // @ViewChild + templateRef(#applicantPprofileBtn) - using when we need to manipulate the element directtly, like pressing button
   @ViewChild('messageBtn') messageBtnRef!: ElementRef<HTMLElement>;
@@ -62,7 +62,7 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
 
   populateIntoApplicantJobDisplayView(role: string): Promise<void>{
 
-    return this.dbService.initCSVIndexedDB().then((db: IDBDatabase) => {
+    return this.CsvDbService.initCSVIndexedDB().then((db: IDBDatabase) => {
         return new Promise((resolve, reject) => {
 
             const transactionRetrieve = db.transaction(['csvData_os'], "readonly");
