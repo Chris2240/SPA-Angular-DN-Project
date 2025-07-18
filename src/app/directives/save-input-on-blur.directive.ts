@@ -1,12 +1,17 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
-import { ApplicantProfileComponent } from '../components/applicant-profile/applicant-profile.component';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appSaveInputOnBlur]'
 })
 export class SaveInputOnBlurDirective {
   
-  constructor( private el: ElementRef<HTMLInputElement>, private applicantProfileComponent: ApplicantProfileComponent) { }
+  // Optional input properties used to pass validation methods from the host component.
+  // These functions should return a boolean indicating whether the phone or email input is valid.
+  // Used by the directive to validate input before saving to localStorage.
+  @Input() phoneValidator?: () => boolean;
+  @Input() emailValidator?: () => boolean;
+  
+  constructor( private el: ElementRef<HTMLInputElement>) { }
 
   @HostListener('blur') onBlur(): void{
     const inputEl = this.el.nativeElement;
@@ -22,18 +27,17 @@ export class SaveInputOnBlurDirective {
     // this preventing saving input data at local storage if validation faild
     switch (inputId){
       case "applicant-phone":
-        const isValidApplicantPhone = this.applicantProfileComponent.applicantValidateMobileInput();
 
-        if(!isValidApplicantPhone){
+        if(this.phoneValidator && !this.phoneValidator()){      // If the validator exists, and it returns false: treat it as invalid
+                                                                // this.phoneValidator — checks if the function exists / !this.phoneValidator() — calls the function and negates its result.
           inputEl.value = '';
           return;
         }
         break;
 
       case "applicant-email":
-        const isValidApplicantEmail = this.applicantProfileComponent.applicantValidateEmailInput();
 
-        if(!isValidApplicantEmail){
+        if(this.emailValidator && !this.emailValidator()){
           inputEl.value = '';
           return
         }

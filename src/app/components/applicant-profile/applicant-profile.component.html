@@ -37,20 +37,24 @@
                             id="applicant-phone" 
                             name="applicant-phone"
                             [(ngModel)]="applicantPhone"
+                            [phoneValidator]="applicantValidateMobileInput.bind(this)"  
                             appSaveInputOnBlur
                             title="Please provide a valied phone number"
                             placeholder="mobile phone">
                     </td>
-                    <!-- [(ngModel)]="applicantPhone" - two-way binding (very handy for keeping input and component property in sync) -->
+                    <!-- [(ngModel)]="applicantPhone" - two-way binding (very handy for keeping input and component methods and property in sync) -->
+                    <!-- [phoneValidator]="applicantValidateMobileInput.bind(this)" - pass a reference to the applicantValidateMobileInput() method from the component to the custom directive input called phoneValidator.
+                                                                                      .bind(this) ensures the method keeps the correct 'this' context. -->
                 </tr>
                 <tr style="text-align: left;">
                     <td> <label for="applicant-email">Email</label></td>
                     <td><input
                             type="email"
-                            id="applicant-email" 
+                            id="applicant-email"
                             name="applicant-email"
                             [(ngModel)]="applicantEmail"
                             appSaveInputOnBlur
+                            [emailValidator]="applicantValidateEmailInput.bind(this)"
                             maxlength="32"
                             required                                            
                             placeholder="userName@example.com"                                        
