@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { CsvDbService } from '../../services/csvDb.service';
 import { IcsvDataForApplicantJobDisplayView } from '../../models/icsv-data-for-applicant-job-display-view.model';
 import { ActivatedRoute } from '@angular/router';
+import { ApplicantDataDbService } from '../../services/applicant-data-db.service';
 
 @Component({
   selector: 'app-applicant-job-display-view',
@@ -21,11 +22,21 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
   'Salary': '',
   };
   
-  constructor(private CsvDbService: CsvDbService, private route: ActivatedRoute){};
+  constructor(private CsvDbService: CsvDbService, private route: ActivatedRoute, private applicantDataDbService: ApplicantDataDbService){};
 
   @ViewChild('applicantPprofileBtn') applicantPprofileBtnRef!: ElementRef<HTMLElement>;   // @ViewChild + templateRef(#applicantPprofileBtn) - using when we need to manipulate the element directtly, like pressing button
   @ViewChild('messageBtn') messageBtnRef!: ElementRef<HTMLElement>;
-  
+
+  // grabing native DOM elements this component using "@ViewChild" for collecting the values and passing them into "ApplicantDataDbService" service
+  @ViewChild('applicantJobDisplayRoleCategoryDropDown') applicantJobDisplayRoleCategoryDropDownRef!: ElementRef<HTMLSelectElement>;
+  @ViewChild('applicantJobDisplayRole') applicantJobDisplayRoleRef!: ElementRef<HTMLInputElement>;
+  @ViewChild('applicantJobDisplayLocationComboBox') applicantJobDisplayLocationComboBoxRef!: ElementRef<HTMLSelectElement>;
+  @ViewChild('applicantJobDisplayIndustry') applicantJobDisplayIndustryRef!: ElementRef<HTMLInputElement>;
+  @ViewChild('applicantJobDisplayFunction') applicantJobDisplayFunctionRef!: ElementRef<HTMLInputElement>;
+  @ViewChild('applicantJobDisplayJobTitle') applicantJobDisplayJobTitleRef!: ElementRef<HTMLInputElement>;
+  @ViewChild('applicantJobDisplayExperience') applicantJobDisplayExperienceRef!: ElementRef<HTMLInputElement>;
+  @ViewChild('applicantJobDisplaySalary') applicantJobDisplaySalaryRef!: ElementRef<HTMLInputElement>;
+
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -48,15 +59,17 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
 
     alert("Thank you for your application.");
     
-    try{
-
-        // later async logic
+    try{      
+        
+        await this.storeToApplicantDataDbService();
         
       }catch(er){
           console.error(er);
         }
         
-        // later async logic
+      // if error appearing in try catch block the "clearApplicantProfileLocalStorageDataKeys" it will clear localStorage anyway
+      await this.clearApplicantProfileLocalStorageDataKeys();
+      location.reload();
   }
 
 
@@ -108,8 +121,6 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
                 console.log("The 'Role' is faild to retrieve.");
             });
 
-            // checking if "Applicant Profile" page contain name, phone and email. Whatever exist or not, show or hide the following buttons in "Applicant Job Display View"
-            // also this method need to invoking here rather then at "UpdatePageContent" method (where all pages contents invokes in if statements blocks), just for in case if the page "Applicant Job Display View" it will reload for some reason, then the values are will disappear and applicant would not able to apply any more (even if name, phone, and email are present at localStorage)
             // applicantProfileInputsCheckAndDisplayBtnsAtAJDV();
         });
     });
@@ -137,5 +148,40 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
       messageBtn.style.display = 'none';
     }
 
+  }
+
+  // function which storing all necessary object fileds in new IDB
+  async storeToApplicantDataDbService(): Promise<void>{
+    const data = {
+      "Role Category": this.applicantJobDisplayRoleCategoryDropDownRef.nativeElement.value,
+      Role: this.applicantJobDisplayRoleRef.nativeElement.value,
+      Location: this.applicantJobDisplayLocationComboBoxRef.nativeElement.value,
+      Industry: this.applicantJobDisplayIndustryRef.nativeElement.value,
+      Function: this.applicantJobDisplayFunctionRef.nativeElement.value,
+      "Job Title": this.applicantJobDisplayJobTitleRef.nativeElement.value,
+      Experience: this.applicantJobDisplayExperienceRef.nativeElement.value,
+      Salary: this.applicantJobDisplaySalaryRef.nativeElement.value,
+
+      // retriving data from LocalStorage
+      "Applicant Name": localStorage.getItem('applicant-profile-name'),
+      "Applicant Phone Number": localStorage.getItem('applicant-phone'),
+      "Applicant Email": localStorage.getItem('applicant-email'),
+      "Applicant Profile Picture": localStorage.getItem('applicant-profile-photo-src'),
+      "Applicant CV": localStorage.getItem('applicant-profile-cv')
+    }
+
+    this.applicantDataDbService.storeApplicantProfileAndJobDisplayView(data);
+  }
+
+  async clearApplicantProfileLocalStorageDataKeys(): Promise<void>{
+
+    // providing localStorage applicant profile fields to remove
+    const lsFieldsToClear: string [] = [ 'applicant-profile-name', 'applicant-phone', 'applicant-email', 'applicant-profile-photo-src', 'applicant-profile-cv'];
+
+    lsFieldsToClear.forEach(key =>{      
+      localStorage.removeItem(key); // removing keys from array
+    })
+
+    console.log('Applicant Profile localStorage fileds are cleared for new applicant');
   }
 }
