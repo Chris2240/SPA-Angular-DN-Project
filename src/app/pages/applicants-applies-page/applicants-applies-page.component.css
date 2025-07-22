@@ -5,16 +5,3 @@
     margin-left: 65px;
     margin-right: 65px; 
 }
-
-button{
-    width: auto;
-    padding: 10px;
-    border: 2px solid white;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 2px;
-}
-
-#employer-profile-nav-link{
-    margin-top: 10px;
-}

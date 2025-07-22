@@ -20,6 +20,7 @@ import { ApplicantProfileComponent } from './components/applicant-profile/applic
 import { SaveInputOnBlurDirective } from './directives/save-input-on-blur.directive';
 import { SaveSelectOptionOnBlurDirective } from './directives/save-select-option-on-blur.directive';
 import { SaveAndDisplayPictureDirective } from './directives/save-and-display-picture.directive';
+import { ApplicantsAppliesComponent } from './components/applicants-applies/applicants-applies.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SaveAndDisplayPictureDirective } from './directives/save-and-display-pi
     ApplicantProfileComponent,
     SaveInputOnBlurDirective,
     SaveSelectOptionOnBlurDirective,
-    SaveAndDisplayPictureDirective
+    SaveAndDisplayPictureDirective,
+    ApplicantsAppliesComponent
   ],
   imports: [
     BrowserModule,
