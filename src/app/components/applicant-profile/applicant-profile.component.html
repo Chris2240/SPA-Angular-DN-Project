@@ -5,13 +5,13 @@
                     <span id="applicant-profile-welcome-name" name="applicant-profile-welcome-name">{{spanWelcomeName ||'Applicant Name (Entered)'}}</span><br>                            
             </form>
                 <div>
-                    <img src="" id="applicant-profile-photo-src" alt="Applicant Photo" style="width: 100px; height: 70px" #imageReload>
+                    <img src="" id="applicant-profile-photo-src" alt="Applicant Photo" style="width: 100px; height: 70px" #imageElement>
                 </div>
                         
                 <!-- added Applicant CV link to download file if user attach the CV -->
                 <nav>
                     <!-- anchor element reference (#cvAnchorLink); displays 'cvAnchorText' or fallback text to default text if it's empty - Angular -->
-                    <a id="applicant-profile-CV-link" class="nav-link green-btn" #cvAnchorLink>{{cvAnchorText || 'No CV Available (Additional Button)'}}</a>
+                    <a id="applicant-profile-CV-link" class="nav-link green-btn" #cvAnchorLink>{{cvAnchorText}}</a>
                 </nav>
         </div>
         <nav class="nav-section">
@@ -22,7 +22,7 @@
                 <tr style="text-align: left;">
                     <th><label for="applicant-profile-name">Applicant Name</label></th>
                     <th><input 
-                            type="text" 
+                            type="text"
                             id="applicant-profile-name" 
                             name="applicant-profile-name"
                             [(ngModel)]="applicantProfileInputName"

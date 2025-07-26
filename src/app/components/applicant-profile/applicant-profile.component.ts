@@ -7,14 +7,16 @@ import { Component, ElementRef, OnInit, ViewChild, AfterViewInit} from '@angular
 })
 export class ApplicantProfileComponent implements OnInit, AfterViewInit{
 
-  applicantProfileInputName: string = '';
+  // bindings properties:
+
+  applicantProfileInputName: string = ''; // two-way bound to the applicant name input
   spanWelcomeName: string = '';  // for display in the welcome span
   applicantPhone: string = '';  // [(ngModel)]="applicantPhone" - two-way binding (very handy for keeping input and component property in sync)
-  applicantEmail: string = '';
-  cvAnchorText: string = '';
+  applicantEmail: string = '';  // two-way bound to the email <input>
+  cvAnchorText: string = '';    // text for the CV download <a> link
 
-  // use @ViewChild() to get a reference to that <img> element 
-  @ViewChild('imageReload') imageReloadRef!: ElementRef<HTMLImageElement>;
+  // use @ViewChild() property decorators to get a reference to that <img>, <a>, <input type="file"> elements
+  @ViewChild('imageElement') imageElementRef!: ElementRef<HTMLImageElement>;
   @ViewChild('cvAnchorLink') cvAnchorLinkRef!: ElementRef<HTMLAnchorElement>;
   @ViewChild('cvInput') cvInputRef!: ElementRef<HTMLInputElement>;
   
@@ -31,8 +33,9 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
   }
 
 
-  // updating after reloading all references from "@ViewChild", "imageReloadRef" etc
+  // updating after reloading all references from "@ViewChild", "imageElementRef" etc
   ngAfterViewInit(): void {
+    
     this.reloadImageFromLocalSorage();
     this.restoreCvFromLocalStorage();
   }
@@ -96,7 +99,7 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
     const ImageDataUrl = localStorage.getItem('applicant-profile-photo-src');
 
     if(ImageDataUrl){
-      this.imageReloadRef.nativeElement.src = ImageDataUrl;
+      this.imageElementRef.nativeElement.src = ImageDataUrl;
     }
   }
 
@@ -144,6 +147,8 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
         
     })
 
+    inputEl.value = '';   // clearing input value after changing cell
+
   }
 
   // restore cv from localStorage - this logic provide in seperate method because is reusable in ngAfterViewInit()
@@ -183,7 +188,6 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
 
       localStorage.setItem('applicant-profile-name', newName);
 
-      location.reload();
     }
 
   }
@@ -195,6 +199,20 @@ export class ApplicantProfileComponent implements OnInit, AfterViewInit{
 
     lsFieldsToClear.forEach(key =>{      
       localStorage.removeItem(key); // removing keys from array
+
+      // updating UI used binding properties instaed of "location.reload()" web API method
+      this.applicantEmail = '';
+      this.applicantPhone = '';
+
+      if (this.imageElementRef) {
+          this.imageElementRef.nativeElement.src = '';
+        }
+
+      if(this.cvAnchorLinkRef){
+        this.cvAnchorLinkRef.nativeElement.removeAttribute('href');
+        this.cvAnchorLinkRef.nativeElement.removeAttribute('download');
+        this.cvAnchorText = 'No CV Available (Additional Button)';
+      }
     })
 
     console.log('Applicant Profile localStorage fileds are cleared for new applicant');
