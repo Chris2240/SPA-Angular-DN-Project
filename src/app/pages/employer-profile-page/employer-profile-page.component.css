@@ -7,29 +7,3 @@
     height: 700px;
     align-items: center;
 }
-
-#top-employer-profile{
-    display: flex;
-    justify-content: space-between;
-}
-
-#table-employer-profile{
-    width: 50%;
-    margin: auto;       /* centerilize tables */
-    margin-top: 30px;
-    
-}
-
-#employer-profile-nav-link{
-    margin-top: 10px;
-}
-
-#employer-profile-picture-input,
-#employer-profile-company-logo {
-    width: auto;
-    padding: 10px;
-    border: 2px solid white;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 2px;
-}
