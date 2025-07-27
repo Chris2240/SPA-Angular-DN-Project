@@ -41,6 +41,8 @@ export class SaveAndDisplayPictureDirective {
     // start reading the image file as data URL
     fileReader.readAsDataURL(file);
 
+    inputEl.value = '';   // clearing input value after changing cell
+
   }
 
 }
