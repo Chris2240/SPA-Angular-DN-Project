@@ -12,6 +12,7 @@ export class MainViewComponent implements OnInit, AfterViewInit {
 
   // getting the references of DOM elements using @ViewChild() property decorator
   @ViewChild('applicantProfileLink') applicantProfileLinkRef!: ElementRef<HTMLAnchorElement>;
+  @ViewChild('employerProfileLink') employerProfileLinkRef!: ElementRef<HTMLAnchorElement>;
 
   csvData: IcsvDataItem[] = []; // array of objects typed with IcsvDataItem interface, used in "*ngFor" directive in the html template
   constructor(private CsvDbService: CsvDbService, private router: Router) {} // services are injected ALWAYS through the constructor
@@ -25,6 +26,7 @@ export class MainViewComponent implements OnInit, AfterViewInit {
   // ngAfterViewInit 
   ngAfterViewInit(): void {
     this.hideApplicantProfileBtnsAtMainView();  // - because I have used the reference from @ViewChild property decorator which is inside this method and methodwill only works in this "ngAfterViewInit()"
+    this.hideEmployerProfileBtnAtMainView();
   }
 
   //functions
@@ -83,6 +85,29 @@ export class MainViewComponent implements OnInit, AfterViewInit {
 
       applicantProfileBtn.style.display = 'none'
     }
+  }
+
+  // hide "Employer Profile" anchor button in Main View page if "Employer Profile" page contains company name, website, company logo, employer name, phone, email and profile picture
+  hideEmployerProfileBtnAtMainView(): void{
+
+    // accessing the native HTML anchor element from the @ViewChild reference
+    const employerProfileBtn = this.employerProfileLinkRef.nativeElement;
+
+    // retrieving employer data from localStorage if exist, if so - hide this navigate anochor button at Main View page
+    const employerProfileCompanyName = localStorage.getItem('employer-profile-company-name');
+    const employerProfileCompanyWebsiete = localStorage.getItem('employer-profile-company-website');
+    const employerProfileCompanyLogo = localStorage.getItem('employer-profile-company-logo');
+    const employerProfileName = localStorage.getItem('employer-profile-employer-name');
+    const employerProfilePhone = localStorage.getItem('employer-profile-phone');
+    const employerProfileEmail = localStorage.getItem('employer-profile-email');
+    const employerProfilePicture = localStorage.getItem('employer-profile-picture-src');
+
+    if(employerProfileCompanyName && employerProfileCompanyWebsiete && employerProfileCompanyLogo &&
+       employerProfileName && employerProfilePhone && employerProfileEmail && employerProfilePicture){
+
+        employerProfileBtn.style.display = 'none';
+    }
+
   }
 
 }
