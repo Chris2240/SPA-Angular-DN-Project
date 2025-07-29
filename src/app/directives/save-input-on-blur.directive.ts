@@ -38,10 +38,29 @@ export class SaveInputOnBlurDirective {
       case "applicant-email":
 
         if(this.emailValidator && !this.emailValidator()){
+          
           inputEl.value = '';
           return
         }
         break;
+
+      case "employer-profile-phone":
+
+        if(this.phoneValidator && !this.phoneValidator()){
+          
+          inputEl.value = '';
+          return; 
+        }
+        break;
+      
+      case "employer-profile-email":
+
+      if(this.emailValidator && !this.emailValidator()){
+
+        inputEl.value = '';
+        return;
+      }
+        
     }
 
     // find the associated label
@@ -52,7 +71,7 @@ export class SaveInputOnBlurDirective {
       try{
         
         localStorage.setItem(inputId, inputValue);
-        console.log(`The ${inputValue} is saved at ${inputId} local storage`)        
+        console.log(`The ${inputValue} is saved at ${inputId} local storage`)
         
         inputEl.value = ''  // clearing input value
       
