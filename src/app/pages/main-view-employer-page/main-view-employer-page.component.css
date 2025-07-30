@@ -5,39 +5,3 @@
     margin-left: 65px;
     margin-right: 65px; 
 }
-
-button{
-    width: auto;
-    padding: 10px;
-    border: 2px solid white;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 2px;
-}
-
-#top-main-view-employer{
-    display: flex;
-    justify-content: space-between;
-}
-
-#login-btn{
-    width: auto;
-    padding: 10px;
-    border: 2px solid white;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 2px;
-}
-
-#form-welcome-main-view-employer{
-    display: block;    
-}
-
-#main-view-employer-add-new-job-anchor{
-    margin-top: 28px;
-}
-
-#table-main-view-employer {
-    margin-top: 20px;
-    width: 100%;
-}

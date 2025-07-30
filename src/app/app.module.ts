@@ -22,6 +22,7 @@ import { SaveSelectOptionOnBlurDirective } from './directives/save-select-option
 import { SaveAndDisplayPictureDirective } from './directives/save-and-display-picture.directive';
 import { ApplicantsAppliesComponent } from './components/applicants-applies/applicants-applies.component';
 import { EmployerProfileComponent } from './components/employer-profile/employer-profile.component';
+import { MainViewEmployerComponent } from './components/main-view-employer/main-view-employer.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { EmployerProfileComponent } from './components/employer-profile/employer
     SaveSelectOptionOnBlurDirective,
     SaveAndDisplayPictureDirective,
     ApplicantsAppliesComponent,
-    EmployerProfileComponent
+    EmployerProfileComponent,
+    MainViewEmployerComponent
   ],
   imports: [
     BrowserModule,
