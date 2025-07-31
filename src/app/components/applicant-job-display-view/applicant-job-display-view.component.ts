@@ -69,7 +69,6 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
         
       // if error appearing in try catch block the "clearApplicantProfileLocalStorageDataKeys" it will clear localStorage anyway
       await this.clearApplicantProfileLocalStorageDataKeys();
-      location.reload();
   }
 
 
@@ -180,6 +179,10 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
 
     lsFieldsToClear.forEach(key =>{      
       localStorage.removeItem(key); // removing keys from array
+
+      // updating UI in apllicant job display view buttons instead of using default web API methods as "location.reload();"
+      this.messageBtnRef.nativeElement.style.display = 'none';
+      this.applicantPprofileBtnRef.nativeElement.style.display = 'block';
     })
 
     console.log('Applicant Profile localStorage fileds are cleared for new applicant');
