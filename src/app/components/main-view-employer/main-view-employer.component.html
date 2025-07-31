@@ -1,9 +1,24 @@
 <div class="section-main-view-employer">
         <div id="top-main-view-employer">
-            <img src="" id="main-view-employer-logo-img" alt="Company Logo loaded in the profile view" width= "auto" height="125px" style="margin-left: 30px">
+            <img src="" id="main-view-employer-logo-img" alt="Company Logo loaded in the profile view" width= "auto" height="125px" style="margin-left: 30px" #companyLogoImageElement>
                 <form id="form-welcome-main-view-employer">
                     <label for="main-view-employer-welcome-name">Welcome: </label>
-                    <span id="main-view-employer-welcome-name" name="main-view-employer-welcome-name">Employer Name</span>                                
+                    <span
+                        *ngIf="isEmployerName"
+                        id="main-view-employer-welcome-name"
+                        name="main-view-employer-welcome-name"
+                        >
+                        
+                        {{ spanEmployerNameText }}
+                    </span>
+                    <span
+                        *ngIf="!isEmployerName"
+                        id="main-view-employer-welcome-name"
+                        name="main-view-employer-welcome-name"
+                        >
+                        
+                        {{ spanEmployerNameText }}
+                    </span>                          
                     <a routerLink="/add-edit-job-employer-page" id="main-view-employer-add-new-job-anchor" class="nav-link green-btn">Add New Job</a>
                 </form>
                 <form id="form-authentication">
@@ -13,10 +28,28 @@
                     </nav>
                     <!-- adding Applicant Apply href if user apply for the job -->
                     <nav>
-                        <a routerLink="/applicants-applies-page" id="main-view-employer-applicant-applies-href" class="nav-link green-btn">Applicant(s) Applies (Additional Page)</a>
+                        <a 
+                            *ngIf="hasApplicants"
+                            routerLink="/applicants-applies-page"
+                            id="main-view-employer-applicant-applies-href"
+                            class="nav-link green-btn"
+                            >
+                            
+                            {{ applicantsAppliesAnchorText }}
+                        </a>
+                        <a 
+                            *ngIf="!hasApplicants"
+                            [routerLink]="null"
+                            id="main-view-employer-applicant-applies-href"
+                            class="nav-link grey-btn"
+                            (click)="noApplicantAlert()"
+                            >
+                            
+                           {{ applicantsAppliesAnchorText }}
+                        </a>
                     </nav>
                 </form>                                                
-            <img src="" id="main-view-employer-picture-img" alt="Profile Picture loaded in the profile view" width="auto" height="125px" style="margin-right: 30px">
+            <img src="" id="main-view-employer-picture-img" alt="Profile Picture loaded in the profile view" width="auto" height="125px" style="margin-right: 30px" #employerImageElement>
         </div>
         <table id="table-main-view-employer">
             <thead>
