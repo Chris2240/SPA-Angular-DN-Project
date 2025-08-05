@@ -23,6 +23,7 @@ import { SaveAndDisplayPictureDirective } from './directives/save-and-display-pi
 import { ApplicantsAppliesComponent } from './components/applicants-applies/applicants-applies.component';
 import { EmployerProfileComponent } from './components/employer-profile/employer-profile.component';
 import { MainViewEmployerComponent } from './components/main-view-employer/main-view-employer.component';
+import { AddEditJobEmployerComponent } from './components/add-edit-job-employer/add-edit-job-employer.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MainViewEmployerComponent } from './components/main-view-employer/main-
     SaveAndDisplayPictureDirective,
     ApplicantsAppliesComponent,
     EmployerProfileComponent,
-    MainViewEmployerComponent
+    MainViewEmployerComponent,
+    AddEditJobEmployerComponent
   ],
   imports: [
     BrowserModule,

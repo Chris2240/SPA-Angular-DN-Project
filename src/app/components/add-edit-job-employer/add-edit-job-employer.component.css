@@ -1,0 +1,34 @@
+#top-welcome-add-edit-job-employer{
+    display: flex;
+    justify-content: space-between;
+}
+
+#save-add-edit-btn{
+    margin-top: 10px;
+}
+
+button{
+    width: auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+#table-add-edit-job-employer{
+    width: 50%;
+    margin: auto;       /* centerilize tables */
+    margin-top: 30px;    
+}
+
+#add-edit-role-category-drop-down,
+#add-edit-location-combo-box{
+    width: auto;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 2px;
+
+}
