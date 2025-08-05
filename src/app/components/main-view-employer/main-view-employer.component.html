@@ -67,65 +67,26 @@
                 </tr>
             </thead>
             <tbody id="tbody-main-view-employer">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr *ngFor="let item of csvData">
+                    <td>{{item['Role Category']}}</td>
+                    <td>{{item['Role']}}</td>
+                    <td>{{item['Location']}}</td>
+                    <td>{{item['Industry']}}</td>
+                    <td>{{item['Function']}}</td>
+                    <td>{{item['Job Title']}}</td>
+                    <td>{{item['Experience']}}</td>
+                    <td>{{item['Salary']}}</td>
                     <td>
                         <nav class="nav-section">
-                            <a routerLink="/add-edit-job-employer-page" class="nav-link green-btn">Manage</a>
+                            <a class="nav-link green-btn" (click)="manageAnchorBtn(item.Role ?? '')" >Manage</a>    <!-- the routerLink, and role is passing inside manageAnchorBtn() method -->
                         </nav>                                    
                     </td>
                     <td>
                         <div>
-                            <button class="pink-btn">Delete</button>
+                            <button class="pink-btn" (click)="deleteBtn(item.Role ?? '')">Delete</button>
                         </div>
                     </td>                               
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <nav class="nav-section">
-                            <a routerLink="/add-edit-job-employer-page" class="nav-link green-btn">Manage</a>
-                        </nav>
-                    </td>
-                    <td>
-                        <div>
-                            <button class="pink-btn">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                            
-                <!-- Hiding "Add New Job" anchor button from table and move to the Top section of "Main View Employer" 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <nav class="nav-section">
-                            <a routerLink="/add-edit-job-employer-page" id="main-view-employer-add-new-job-anchor" class="nav-link green-btn">Add New Job</a>
-                        </nav>
-                    </td>                                
-                </tr>
-                -->
-
+                </tr>                
             </tbody>
         </table>
     </div>
