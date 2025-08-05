@@ -91,7 +91,7 @@ export class MainViewEmployerComponent implements AfterViewInit, OnInit {
       this.spanEmployerNameText = 'Employer Name';
     }
     else{
-      this.spanEmployerNameText = storedEmployerName?.trim() || '';
+      this.spanEmployerNameText = storedEmployerName?.trim() || 'Employer Name';
     }
   }
 
