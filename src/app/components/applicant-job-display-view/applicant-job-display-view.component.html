@@ -8,7 +8,7 @@
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-role-category-drop-down" class="role-category-blur">Role Category</label></td>
                                 <td>
-                                    <select #applicantJobDisplayRoleCategoryDropDown id="applicant-job-display-role-category-drop-down" class="green-btn all-drop-down" [(ngModel)]="csvData['Role Category']" [ngModelOptions]="{standalone: true}" appSaveSelectOptionOnBlur>
+                                    <select #applicantJobDisplayRoleCategoryDropDown id="applicant-job-display-role-category-drop-down" class="green-btn all-drop-down" [(ngModel)]="icsvDataPopulate['Role Category']" [ngModelOptions]="{standalone: true}" appSaveSelectOptionOnBlur>
                                         <option value="">Select Role Category</option> <!-- at Angular in this case the "value="" need to be empty -->
                                         <option value="Advertising">Advertising</option>
                                         <option value="Programming & Design">Programming & Design</option>
@@ -28,12 +28,12 @@
                             </tr>                        
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-role">Role</label></td>
-                                <td><input type="text" #applicantJobDisplayRole id="applicant-job-display-role" name="applicant-job-display-role" [(ngModel)]="csvData['Role']" appSaveInputOnBlur></td>
+                                <td><input type="text" #applicantJobDisplayRole id="applicant-job-display-role" name="applicant-job-display-role" [(ngModel)]="icsvDataPopulate['Role']" appSaveInputOnBlur></td>
                             </tr>                        
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-location-combo-box" class="location-blur">Location</label></td>
                                 <td>
-                                    <select #applicantJobDisplayLocationComboBox id="applicant-job-display-location-combo-box" class="green-btn all-combo-box" [(ngModel)]="csvData['Location']" [ngModelOptions]="{standalone: true}" appSaveSelectOptionOnBlur> <!-- no name attribute - [ngModelOptions]="{standalone: true}" -->
+                                    <select #applicantJobDisplayLocationComboBox id="applicant-job-display-location-combo-box" class="green-btn all-combo-box" [(ngModel)]="icsvDataPopulate['Location']" [ngModelOptions]="{standalone: true}" appSaveSelectOptionOnBlur> <!-- no name attribute - [ngModelOptions]="{standalone: true}" -->
                                         <option value="">Select Location</option> <!-- at Angular in this case the "value="" need to be empty -->
                                         <option value="Leeds">Leeds</option>
                                         <option value="London">London</option>
@@ -51,23 +51,23 @@
                             </tr>                                                
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-industry">Industry</label></td>
-                                <td><input type="text" #applicantJobDisplayIndustry id="applicant-job-display-industry" name="applicant-job-display-industry" [(ngModel)]="csvData['Industry']" appSaveInputOnBlur ></td>
+                                <td><input type="text" #applicantJobDisplayIndustry id="applicant-job-display-industry" name="applicant-job-display-industry" [(ngModel)]="icsvDataPopulate['Industry']" appSaveInputOnBlur ></td>
                             </tr>
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-function">Function</label></td>
-                                <td><input type="text" #applicantJobDisplayFunction id="applicant-job-display-function" name="applicant-job-display-function" [(ngModel)]="csvData['Function']" appSaveInputOnBlur></td>
+                                <td><input type="text" #applicantJobDisplayFunction id="applicant-job-display-function" name="applicant-job-display-function" [(ngModel)]="icsvDataPopulate['Function']" appSaveInputOnBlur></td>
                             </tr>
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-job-title">Job Title</label></td>
-                                <td><input type="text" #applicantJobDisplayJobTitle id="applicant-job-display-job-title" name="applicant-job-display-job-title" [(ngModel)]="csvData['Job Title']" appSaveInputOnBlur></td>
+                                <td><input type="text" #applicantJobDisplayJobTitle id="applicant-job-display-job-title" name="applicant-job-display-job-title" [(ngModel)]="icsvDataPopulate['Job Title']" appSaveInputOnBlur></td>
                             </tr>
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-experience">Experience</label></td>
-                                <td><input type="text" #applicantJobDisplayExperience id="applicant-job-display-experience" name="applicant-job-display-experience" [(ngModel)]="csvData['Experience']" appSaveInputOnBlur></td>
+                                <td><input type="text" #applicantJobDisplayExperience id="applicant-job-display-experience" name="applicant-job-display-experience" [(ngModel)]="icsvDataPopulate['Experience']" appSaveInputOnBlur></td>
                             </tr>
                             <tr style="text-align: left;">
                                 <td><label for="applicant-job-display-salary">Salary</label></td>
-                                <td><input type="text" #applicantJobDisplaySalary id="applicant-job-display-salary" name="applicant-job-display-salary" [(ngModel)]="csvData['Salary']" appSaveInputOnBlur></td>
+                                <td><input type="text" #applicantJobDisplaySalary id="applicant-job-display-salary" name="applicant-job-display-salary" [(ngModel)]="icsvDataPopulate['Salary']" appSaveInputOnBlur></td>
                             </tr>
                         </table>
                     </form> 

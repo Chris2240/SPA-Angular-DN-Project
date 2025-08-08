@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CsvDbService } from '../../services/csvDb.service';
-import { IcsvDataForApplicantJobDisplayView } from '../../models/icsv-data-for-applicant-job-display-view.model';
+import { IcsvDataForPopulate } from '../../models/icsv-data-for-populate.model';
 import { ActivatedRoute } from '@angular/router';
 import { ApplicantDataDbService } from '../../services/applicant-data-db.service';
 
@@ -11,7 +11,7 @@ import { ApplicantDataDbService } from '../../services/applicant-data-db.service
 })
 export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
 
-  csvData: IcsvDataForApplicantJobDisplayView = {
+  icsvDataPopulate: IcsvDataForPopulate = {
   'Role Category': '',
   'Role': '',
   'Location': '',
@@ -96,7 +96,7 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
                         // console.log("after deleting: ", data.__parsed_extra);
 
                         // Populate fields with fetched data
-                        this.csvData = {
+                        this.icsvDataPopulate = {
                           'Role Category': data['Role Category'] || '',
                           'Role': data['Role'] || '',                          
                           'Location': data['Location'] || '',

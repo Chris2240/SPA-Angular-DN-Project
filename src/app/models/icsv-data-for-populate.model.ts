@@ -1,4 +1,4 @@
-export interface IcsvDataForApplicantJobDisplayView{
+export interface IcsvDataForPopulate{
 
     'Role Category': string;
     Role: string;
