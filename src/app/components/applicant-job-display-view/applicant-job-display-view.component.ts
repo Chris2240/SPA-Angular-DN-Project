@@ -106,7 +106,21 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
                           'Experience': data['Experience'] || '',
                           'Salary': data['Salary'] || '',
                         }
-                    };                    
+                    }
+                    else{   // if no "data.__parsed_extra" - do as follows
+                                            
+                        // Populate fields with fetched data
+                        this.icsvDataPopulate = {
+                          'Role Category': data['Role Category'] || '',
+                          'Role': data['Role'] || '',                          
+                          'Location': data['Location'] || '',
+                          'Industry': data['Industry'] || '',
+                          'Function': data['Function'] || '',
+                          'Job Title': data['Job Title'] || '',
+                          'Experience': data['Experience'] || '',
+                          'Salary': data['Salary'] || '',
+                        }
+                    }
                 }
                 else{
                     console.log("No data found for 'Role'");
