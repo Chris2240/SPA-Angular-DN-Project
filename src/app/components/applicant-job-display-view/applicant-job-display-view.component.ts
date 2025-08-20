@@ -37,6 +37,9 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
   @ViewChild('applicantJobDisplayExperience') applicantJobDisplayExperienceRef!: ElementRef<HTMLInputElement>;
   @ViewChild('applicantJobDisplaySalary') applicantJobDisplaySalaryRef!: ElementRef<HTMLInputElement>;
 
+  // prevent user typing anything in inputs by binding [disabled] to this "readOnlyMode: boolean = true" (flag) in the HTML template
+  readOnlyMode: boolean = true;
+  
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -54,7 +57,8 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
   }
 
   
-  // all methods
+  // all methods ------------------------------------------------
+  
   async applyMessageBtn(): Promise<void>{
 
     alert("Thank you for your application.");
@@ -197,6 +201,16 @@ export class ApplicantJobDisplayViewComponent implements OnInit, AfterViewInit{
       // updating UI in apllicant job display view buttons instead of using default web API methods as "location.reload();"
       this.messageBtnRef.nativeElement.style.display = 'none';
       this.applicantPprofileBtnRef.nativeElement.style.display = 'block';
+
+      // clearing all inputs elemnets at "Applicant Profile" page after teransfering them into "ApplicantDataDbService" while after pressed "Apply" button
+      this.applicantJobDisplayRoleCategoryDropDownRef.nativeElement.value = "";
+      this.applicantJobDisplayRoleRef.nativeElement.value = "";
+      this.applicantJobDisplayLocationComboBoxRef.nativeElement.value = "";
+      this.applicantJobDisplayIndustryRef.nativeElement.value = "";
+      this.applicantJobDisplayFunctionRef.nativeElement.value = "";
+      this.applicantJobDisplayJobTitleRef.nativeElement.value = "";
+      this.applicantJobDisplayExperienceRef.nativeElement.value = "";
+      this.applicantJobDisplaySalaryRef.nativeElement.value = "";
     })
 
     console.log('Applicant Profile localStorage fileds are cleared for new applicant');
