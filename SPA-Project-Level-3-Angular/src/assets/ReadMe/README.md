@@ -24,9 +24,10 @@ In this project I have been given the following task to achieve a whole Single P
 To run this app I needed to set the environment first which is already set but for someone if not, need to follow the steps:
 
 Open the vscode and in the terminal provide some installations:
-* install the Node.js,
-* install the Angular cli - npm install -g @angular/cli,
-* check if the Angular is correct installed - ng -- version or ng v (if so it will version provided).
+* install the **Node.js**. This is a separate installation program on pc which you can find on https://nodejs.org/en/download) v20.20.0(LTS). If the current **Node.js** package will not support the **@angular/cli** (Command Line Interface), after typing **ng v** command will tell you which **Node.js** version is supported after installing the Angular CLI package in VSCode terminal.
+
+* install the Angular cli - **npm install -g @angular/cli**,
+* check if the Angular is correct installed - **ng -- version** or **ng v** (if so it will version provided).
 
 Now I am ready to clone and run the DN template in Angular. To do so I needed to do as follows:
 * clone the project from the github repository(the link was provided into this path),
@@ -44,7 +45,7 @@ After those steps the project should look as follows:
 
 ![alt text](<Screenshots_Readme/Screenshot 1.jpg>)
 
-Finally I can open the app using npm start or ng serve or ng serve --open (the last one it will build the angular app and open itself in default browser for you).
+Finally I can open the app using **npm start**, **ng serve** or **ng serve --open** (the last one it will build the angular app and open itself in default browser for you).
 
 ## Creating additional branches to preventing unnecessary losses
 Because I needed to redevelop the DN Angular Template, so in this case it is a good practice to commit in .git. The first commit which I have used is updating npm which shows as in .git  that the “package-lock.json” is modifying and I should commit this but NOT push:
