@@ -24,7 +24,7 @@ In this project I have been given the following task to achieve a whole Single P
 To run this app I needed to set the environment first which is already set but for someone if not, need to follow the steps:
 
 Open the vscode and in the terminal provide some installations:
-* install the **Node.js**. This is a separate installation program on pc which you can find on https://nodejs.org/en/download) v20.20.0(LTS). If the current **Node.js** package will not support the **@angular/cli** (Command Line Interface), after typing **ng v** command will tell you which **Node.js** version is supported after installing the Angular CLI package in VSCode terminal.
+* install the **Node.js**. This is a separate installation program on pc which you can find on https://nodejs.org/en/download, v20.20.0(LTS). If the current **Node.js** package will not support the **@angular/cli** (Command Line Interface), after typing **ng v** command will tell you which **Node.js** version is supported after installing the Angular CLI package in VSCode terminal.
 
 * install the Angular cli - **npm install -g @angular/cli**,
 * check if the Angular is correct installed - **ng -- version** or **ng v** (if so it will version provided).
